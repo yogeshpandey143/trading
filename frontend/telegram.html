@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <title>Hodlinfo</title>
+</head>
+<body class="bg-gray-800 text-white font-sans">
+  <nav class="flex flex-col md:flex-row justify-between items-center p-6 bg-gray-900">
+    <div class="text-4xl font-bold text-teal-500 uppercase mb-4 md:mb-0"><a href="/frontend/index.html">Hodlinfo</a></div>
+    <div class="flex space-x-4 mb-4 md:mb-0">
+      <select class="bg-gray-600 text-white p-2 rounded-2xl">
+        <option>BTC</option>
+        <option>ETH</option>
+        <option>RIP</option>
+      </select>
+      <select class="bg-gray-600 text-white p-2 rounded-2xl">
+        <option>LIN</option>
+        <option>CAR</option>
+        <option>POL</option>
+      </select>
+      <select class="bg-gray-600 text-white p-2 rounded-2xl">
+        <option>CHA</option>
+        <option>SHA</option>
+        <option>DOGE</option>
+      </select>
+    </div>
+    <div class="flex items-center space-x-4">
+      <div class="text-center">
+        <div class="relative w-20 h-20">
+          <svg class="absolute top-0 left-0 w-full h-full">
+            <circle cx="50%" cy="50%" r="20" stroke="white" stroke-width="4" fill="none" />
+          </svg>
+          <svg class="absolute top-0 left-0 w-full h-full transform -rotate-90">
+            <circle cx="50%" cy="50%" r="20" stroke="#38b2ac" stroke-width="5" stroke-dasharray="157.08" stroke-dashoffset="0" fill="none" id="timer-circle" />
+          </svg>
+          <div class="absolute inset-0 flex items-center justify-center text-teal-500 text-xl font-bold" id="timer-text">60</div>
+        </div>
+      </div>
+      <button class="bg-teal-500 text-white py-2 px-4 rounded-2xl hover:bg-teal-400">
+        Connect Telegram
+      </button>
+      <label class="flex items-center cursor-pointer">
+        <input type="checkbox" id="toggle-checkbox" class="sr-only">
+        <div class="w-10 h-6 bg-gray-400 rounded-full p-1 duration-300 ease-in-out">
+          <div id="toggle-indicator" class="bg-white w-4 h-4 rounded-full shadow-md transform duration-300 ease-in-out"></div>
+        </div>
+      </label>
+    </div>
+  </nav>
+
+  <script src="./script.js"></script>
+</body>
+</html>

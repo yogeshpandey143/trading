@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Hodlinfo</title>
+</head>
+<body class="bg-gray-800 text-white font-sans">
+
+  <!-- Navigation Bar -->
+  <nav id="nav-bar" class="flex flex-col md:flex-row justify-between items-center p-6 bg-gray-900">
+    <div class="text-4xl font-bold text-teal-500 uppercase mb-4 md:mb-0">
+      <a href="/frontend/index.html">Hodlinfo</a>
+    </div>
+    <div class="flex space-x-4 mb-4 md:mb-0">
+      <select id="fromcurrency" class="bg-gray-600 text-white p-2 rounded-2xl">
+        <option>INR</option>
+        <option>ETH</option>
+        <option>RIP</option>
+      </select>
+      <select id="tocurrency" class="bg-gray-600 text-white p-2 rounded-2xl">
+        <option>LIN</option>
+        <option>CAR</option>
+        <option>POL</option>
+      </select>
+
+      <button  id="buyBtn" class="bg-gray-600 text-white p-2 rounded-2xl"> Buy BTC </button>
+     
+    </div>
+    <div class="flex items-center space-x-4">
+      <div class="text-center">
+        <div class="relative w-20 h-20">
+          <svg class="absolute top-0 left-0 w-full h-full">
+            <circle cx="50%" cy="50%" r="20" stroke="white" stroke-width="4" fill="none" />
+          </svg>
+          <svg class="absolute top-0 left-0 w-full h-full transform -rotate-90">
+            <circle cx="50%" cy="50%" r="20" stroke="#38b2ac" stroke-width="5" stroke-dasharray="157.08" stroke-dashoffset="0" id="timer-circle" fill="none" />
+          </svg>
+          <div class="absolute inset-0 flex items-center justify-center text-teal-500 text-xl font-bold" id="timer-text">60</div>
+        </div>
+      </div>
+      <button id="telegramConnectBtn" class="bg-teal-500 text-white py-2 px-4 rounded-2xl hover:bg-teal-400">
+        Connect Telegram
+      </button>
+      <label class="flex items-center cursor-pointer">
+        <input type="checkbox" id="toggle-checkbox" class="sr-only">
+        <div class="w-10 h-6 bg-teal-500 rounded-full p-1 duration-300 ease-in-out">
+          <div id="toggle-indicator" class="bg-white w-4 h-4 rounded-full translate-x-4 shadow-md transform duration-300 ease-in-out"></div>
+        </div>
+      </label>
+    </div>
+  </nav>
+
+<!-- Content Section -->
+<div class="container mx-auto block p-6 rounded-lg shadow-lg mt-10">
+  <div class="text-center mb-6">
+    <h4 class="text-2xl text-gray-400 font-semibold">Best Price To Trade</h4>
+  </div>
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-6">
+    <div class="text-center">
+      <h2 id="best-price-5min" class="text-2xl text-teal-400 font-bold">0</h2>
+      <p class="text-gray-400">5 Min</p>
+    </div>
+    <div class="text-center">
+      <h2 id="best-price-1hour" class="text-2xl text-teal-400 font-bold">0</h2>
+      <p class="text-gray-400">1 Hour</p>
+    </div>
+    <div class="text-center">
+      <h2 id="best-price-overall" class="text-7xl text-white font-bold">0</h2>
+      <p class="text-gray-400 mt-5">Best</p>
+    </div>
+    <div class="text-center">
+      <h2 id="best-price-1day" class="text-2xl text-teal-400 font-bold">0</h2>
+      <p class="text-gray-400">1 Day</p>
+    </div>
+    <div class="text-center">
+      <h2 id="best-price-1month" class="text-2xl text-teal-400 font-bold">0</h2>
+      <p class="text-gray-400">1 Month</p>
+    </div>
+  </div>
+</div>
+
+  <!-- Table Section -->
+  <div class="container mx-auto block p-6 rounded-lg shadow-lg mt-10">
+    <div class="overflow-x-auto">
+      <table id="crypto-table" class="min-w-full">
+        <thead>
+          <tr class="text-gray-400">
+            <th class="px-4 py-2">Platform</th>
+            <th class="px-4 py-2">Last Trade Price</th>
+            <th class="px-4 py-2">Buy/Sell Price</th>
+            <th class="px-4 py-2">Difference</th>
+            <th class="px-4 py-2">Saving</th>
+          </tr>
+        </thead>
+        <tbody id="crypto-table-body">
+        
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+</html>
